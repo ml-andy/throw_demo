@@ -21,10 +21,13 @@
 		edown = 'touchstart';
 		eup = 'touchend';
 		emove = 'touchmove';
-		o.del = 0.3; //阻力
+		o.del = 1; //阻力
 		// o.r = 1;
-		o.fps = 5; //fps
+		o.fps = 10; //fps
 	}
+	$('body').on(edown,function(e){
+		e.preventDefault();
+	});
 
 	// o.ball
 	o.ball.on(edown,function(e){
@@ -51,8 +54,8 @@
 		o.ball.css('bottom',o.ballbottom);
 	}
 	function ballEnd(){
-		console.log('o.y1:' + o.y1);
-		console.log('o.y2:' + o.y2);
+		// console.log('o.y1:' + o.y1);
+		// console.log('o.y2:' + o.y2);
 		if(o.y2 == o.y1) return
 		o.ctrl = false;
 		clearInterval(o.ballTime);
@@ -63,10 +66,10 @@
 		o.t2 = Math.abs(Math.floor(o.v0 * 1 / o.r));
 		o.s2 = o.v0 * o.t2 * -1 * o.del;
 		o.a2 = Math.sqrt(o.s2 * 2);
-		console.log('o.v0:'+o.v0);
-		console.log('o.t2:'+o.t2);
-		console.log('o.s2:'+o.s2);
-		console.log('o.a2:'+o.a2);
+		// console.log('o.v0:'+o.v0);
+		// console.log('o.t2:'+o.t2);
+		// console.log('o.s2:'+o.s2);
+		// console.log('o.a2:'+o.a2);
 		var goal = o.ballbottom + o.s2;
 		if(goal > o.wrp.height() - o.ball.height()) goal = o.wrp.height() - o.ball.height();
 		else if(goal < 0) goal = 0;

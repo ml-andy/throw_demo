@@ -9,8 +9,13 @@
 	overflow: hidden;
 	.ball{
 		@include alb(50px,50px,50%,0,-25px);
+		@include font(18px,50px,#fff,bolder);
 		@include border-radius(25px);
+		background: url(../images/bg.png) no-repeat;
+		background-position: center;
+		background-size: contain;
 		background-color: #000;
+		text-align: center;
 		cursor: pointer;
 		z-index: 9;
 	}
@@ -31,8 +36,9 @@
 		// background-color: #e8e8e8;
 		overflow: hidden;
 		.ball{
-			@include alb(50px,50px,50%,0,-25px);
-			@include border-radius(25px);
+			@include alb(100px,100px,50%,0,-50px);
+			@include border-radius(50px);
+
 			background-color: #000;
 			cursor: pointer;
 			z-index: 9;
