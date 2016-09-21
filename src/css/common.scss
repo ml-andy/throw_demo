@@ -1,0 +1,47 @@
+@import "base.scss";
+
+.wrapper{
+	position: relative;
+	margin: auto;
+	min-height: 100%;
+	min-width: 1000px;
+	background-color: #fff;
+	overflow: hidden;
+	.ball{
+		@include alb(50px,50px,50%,0,-25px);
+		@include border-radius(25px);
+		background-color: #000;
+		cursor: pointer;
+		z-index: 9;
+	}
+	.overline{
+		@include alb(100%,30%);
+		background-color: #e8e8e8;
+		z-index: 1;
+		pointer-events:none;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.wrapper{
+		position: relative;
+		margin: auto;
+		min-height: 100%;
+		min-width: 100%;
+		// background-color: #e8e8e8;
+		overflow: hidden;
+		.ball{
+			@include alb(50px,50px,50%,0,-25px);
+			@include border-radius(25px);
+			background-color: #000;
+			cursor: pointer;
+			z-index: 9;
+		}
+		.overline{
+			@include alb(100%,30%);
+			background-color: #e8e8e8;
+			z-index: 1;
+			pointer-events:none;
+		}
+	}
+}
